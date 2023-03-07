@@ -119,6 +119,7 @@
 // Variables color 
 $colorSombra: #777777;
 $colorSombraFoto: #000000;
+$colorSombraMontania: #4a0075bd;
 
 .ini_text {
   margin: 30px;
@@ -191,12 +192,14 @@ $colorSombraFoto: #000000;
   filter: drop-shadow(3px 15px 8px $colorSombraFoto);
 }
 
+/* Montaña */
+
 .conteiner_montania{
-  filter:drop-shadow(15px 0px 25px #4a0075bd);
+  filter:drop-shadow(15px 0px 25px $colorSombraMontania);
   transition: 0.2s all ease-out;
 }
 
 .conteiner_montania:hover{
-  filter:drop-shadow(50px 0px 50px #4a0075bd);
-  transform: translateY(30px);
+  filter:drop-shadow(50px 0px 50px $colorSombraMontania);
+  transform: translateY(20px);
 }
