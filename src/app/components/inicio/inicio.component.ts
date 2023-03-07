@@ -16,7 +16,8 @@ export class InicioComponent {
   constructor() {
     this.urlImg = [
       '../../../assets/img/2_Logotipo_Personal(Sebastian_Legnazzi).svg',
-      '../../../assets/img/FotoTraje.png'
+      '../../../assets/img/FotoTraje.png',
+      '../../../assets/img/wave_inicio.svg',
     ];
   }
 

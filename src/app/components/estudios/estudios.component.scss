@@ -1,0 +1,41 @@
+.conteiner_estudios {
+    height: 100vh;
+    background: radial-gradient(ellipse at bottom, #200536 0%, #0b0116 100%);
+    position: relative;
+}
+
+h2{
+    position: relative;
+    z-index: 2;
+}
+
+/* Linea Vertical */
+.v-line {
+    z-index: 1;
+    border-left: thick solid #41096e;
+    border-radius: 3px;
+    height: 70%;
+    left: 50%;
+    position: absolute;
+}
+
+/* Tarjeta */
+
+.tarjeta{
+    background-color: #41096e;
+    box-shadow: 3px 5px 10px #000000;
+}
+
+.contenedor_terjetas{
+    height: 100%;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+    .v-line {display:none;}
+  
+    .contenedor_terjetas {
+      
+    }
+  }
+  
