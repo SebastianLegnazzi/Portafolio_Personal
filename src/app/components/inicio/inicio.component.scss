@@ -1,0 +1,202 @@
+/* ======================= - ESTRELLAS - ============================ */
+@mixin sp-layout {
+  @media screen and (max-width: 750px) {
+    @content;
+  }
+}
+
+.fondo_estrellas {
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+@function random_range($min, $max) {
+  $rand: random();
+  $random_range: $min +floor($rand * (($max - $min) + 1));
+  @return $random_range;
+}
+
+.stars {
+  width: 0px;
+  transform: rotate(-20deg);
+}
+
+.star {
+  $star-count: 20;
+  --star-color: white;
+  --star-tail-length: 6em;
+  --star-tail-height: 2px;
+  --star-width: calc(var(--star-tail-length) / 6);
+  --fall-duration: 10s;
+  --tail-fade-duration: var(--fall-duration);
+
+  position: absolute;
+  top: var(--top-offset);
+  left: 0;
+  width: var(--star-tail-length);
+  height: var(--star-tail-height);
+  color: var(--star-color);
+  background: linear-gradient(45deg, currentColor, transparent);
+  border-radius: 50%;
+  filter: drop-shadow(0 0 6px currentColor);
+  transform: translate3d(130em, 0, 0);
+  animation: fall var(--fall-duration) var(--fall-delay) linear infinite, tail-fade var(--tail-fade-duration) var(--fall-delay) ease-out infinite;
+
+  @include sp-layout {
+    // For mobile performance, tail-fade animation will be removed QAQ
+    animation: fall var(--fall-duration) var(--fall-delay) linear infinite;
+  }
+
+  @for $i from 1 through $star-count {
+    &:nth-child(#{$i}) {
+      --star-tail-length: #{random_range(100em, 850em) / 200};
+      --top-offset: #{random_range(0vh, 3000vh) / 100};
+      --fall-duration: #{random_range(3000, 12000s) / 600};
+      --fall-delay: #{random_range(0, 10000s) / 1000};
+    }
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: calc(var(--star-width) / -2);
+    width: var(--star-width);
+    height: 100%;
+    background: linear-gradient(45deg, transparent, currentColor, transparent);
+    border-radius: inherit;
+    animation: blink 2s linear infinite;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+}
+
+@keyframes fall {
+  to {
+    transform: translate3d(-30em, 0, 0);
+  }
+}
+
+@keyframes tail-fade {
+
+  0%,
+  50% {
+    width: var(--star-tail-length);
+    opacity: 1;
+  }
+
+  70%,
+  80% {
+    width: 0;
+    opacity: 0.4;
+  }
+
+  100% {
+    width: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* ======================= - Texto Inicio - ============================ */
+
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap');
+
+// Variables color 
+$colorSombra: #777777;
+$colorSombraFoto: #000000;
+
+.ini_text {
+  margin: 30px;
+  text-shadow: 0px 1px 0px $colorSombra,
+    0px 2px 0px $colorSombra,
+    0px 3px 0px $colorSombra,
+    0px 4px 0px $colorSombra,
+    3px 10px 8px #000000;
+  transition: 0.3s all ease;
+  animation: bounce;
+  animation-duration: 2s;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.ini_text:hover {
+  transform: translateY(-20px);
+  text-shadow: 0px 1px 0px $colorSombra,
+    0px 2px 0px $colorSombra,
+    0px 3px 0px $colorSombra,
+    0px 4px 0px $colorSombra,
+    0px 5px 0px $colorSombra,
+    0px 6px 0px $colorSombra,
+    3px 20px 8px #000000;
+}
+
+.text_hola {
+  animation-delay: 1s;
+  font-size: 50px;
+}
+
+.text_nombre {
+  animation-delay: 1.3s;
+}
+
+.text_descripcion {
+  animation-delay: 1.6s;
+}
+
+/* ======================= - Logotipo y Foto Personal - ============================ */
+
+/* Logo */
+@media (max-width: 1000px) {
+  .contenedor_logo {
+    display: flex;
+    justify-content: center;
+  }
+
+  .logo_personal {
+    width: 300px;
+  }
+}
+
+/* Foto */
+.Prueba {
+  transform: translate(30px);
+}
+
+.contenedor_info {
+  z-index: 1;
+  margin: auto;
+}
+
+.foto_personal {
+  filter: drop-shadow(3px 5px 5px $colorSombraFoto);
+  transition: 0.2s all ease-out;
+}
+
+.foto_personal:hover {
+  transform: translateY(-20px);
+  filter: drop-shadow(3px 15px 8px $colorSombraFoto);
+}
+
+.conteiner_montania{
+  filter:drop-shadow(15px 0px 25px #4a0075bd);
+  transition: 0.2s all ease-out;
+}
+
+.conteiner_montania:hover{
+  filter:drop-shadow(50px 0px 50px #4a0075bd);
+  transform: translateY(30px);
+}
