@@ -1,3 +1,20 @@
 <div class="conteiner_sobreMi pt-3">
-
+    <h2 class="pt-3" data-aos="fade-right" data-aos-offset="200" data-aos-duration="1000">Sobre mi</h2>
+    <div class="row conteiner_info mt-3">
+        <div class="col-md-6">
+            <div class="d-flex justify-content-center">
+                <p class="col-11 texto_biografia">{{info}}</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="carrousel">
+                <div class="card" *ngFor="let img of imgs; let i = index " id="c{{i}}">
+                    <img src="{{img.imagen}}" (click)="irPagina(img.url)" alt="imagenes de herramientas">
+                </div>
+            </div>
+        </div>
+        <div class='console-container align-self-end text-center'>
+            ◂<span id='text-loco'></span>▸
+        </div>
+    </div>
 </div>

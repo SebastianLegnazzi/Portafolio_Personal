@@ -146,9 +146,8 @@ $colorSombraMontania: #4a0075d3;
   animation-delay: 1.6s;
 }
 
-/* ======================= - Logotipo y Foto Personal - ============================ */
+/* ======================= - Responsive - ============================ */
 
-/* Responsive */
 @media (max-width: 1000px) {
   .contenedor_logo {
     display: flex;
@@ -172,16 +171,20 @@ $colorSombraMontania: #4a0075d3;
     animation-delay: 2s;
     font-size: 50px;
   }
-  
+
   .text_nombre {
     animation-delay: 2.3s;
   }
-  
+
   .text_descripcion {
     animation-delay: 2.6s;
   }
 
   .logo_personal {
+    width: 300px;
+  }
+
+  .foto_personal {
     width: 300px;
   }
 }
@@ -208,24 +211,28 @@ $colorSombraMontania: #4a0075d3;
     transform: rotate(360deg) scale(1.2);
     filter: drop-shadow(3px 15px 8px $colorSombraFoto);
   }
+
+  .logo_personal:hover {
+    transition: 0.2s all ease-in;
+    filter: drop-shadow(0px 3px 5px rgb(128, 37, 112));
+  }
 }
 
-/* Foto */
-.Prueba {
-  transform: translate(30px);
-}
+/* ======================= - Contenedor - ============================ */
 
 .contenedor_info {
   z-index: 1;
   margin: auto;
 }
 
+/* ======================= - Foto Personal - ============================ */
+
 .foto_personal {
   filter: drop-shadow(0px 5px 10px $colorSombraFoto);
   transition: 1s all ease-in-out;
 }
 
-/* Montaña */
+/* ======================= - Montaña - ============================ */
 
 .conteiner_montania {
   filter: drop-shadow(5px 10px 30px $colorSombraMontania);

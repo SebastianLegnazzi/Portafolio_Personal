@@ -1,6 +1,4 @@
 import { Component, OnInit, NgModule } from '@angular/core';
-import { trigger, state, style, animate, transition } from '@angular/animations';
-import Swal from 'sweetalert2';
 
 
 @Component({
@@ -15,7 +13,7 @@ export class InicioComponent {
 
   constructor() {
     this.urlImg = [
-      '../../../assets/img/2_Logotipo_Personal(Sebastian_Legnazzi).svg',
+      '../../../assets/img/Logotipo_Personal(Sebastian_Legnazzi).svg',
       '../../../assets/img/FotoTraje.png',
       '../../../assets/img/wave_inicio.svg',
     ];

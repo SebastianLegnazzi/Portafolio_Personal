@@ -7,4 +7,38 @@ import { Component } from '@angular/core';
 })
 export class EstudiosComponent {
 
+  public objEstudios: Array<any>;
+
+  constructor() {
+    this.objEstudios = [
+      {
+        titulo: "Tecnicatura Universitaria en Desarrollo Web",
+        academia: "UNCO",
+        duracion: "2,5 Años",
+        aprendido: "FullStack LAMP"
+      },
+      {
+        titulo: "Tecnicatura Universitaria en Desarrollo Web",
+        academia: "UNCO",
+        duracion: "2,5 Años",
+        aprendido: "FullStack LAMP"
+      },
+      {
+        titulo: "Tecnicatura Universitaria en Desarrollo Web",
+        academia: "UNCO",
+        duracion: "2,5 Años",
+        aprendido: "FullStack LAMP"
+      },
+      {
+        titulo: "Tecnicatura Universitaria en Desarrollo Web",
+        academia: "UNCO",
+        duracion: "2,5 Años",
+        aprendido: "FullStack LAMP"
+      },
+    ]
+  }
+
+  ngOnInit() {
+  }
 }
+

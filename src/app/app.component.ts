@@ -8,8 +8,9 @@ import * as AOS from 'aos';
 })
 export class AppComponent {
   title = 'Portafolio_Sebastian_Legnazzi';
-  
-  constructor(){}
+
+  constructor(){
+  }
   
   ngOnInit(){
     AOS.init()
